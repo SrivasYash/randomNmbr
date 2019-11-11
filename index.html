@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script>
-    function generateRandonNumber(min, max){
-        console.log('hello')
-        var random = Math.floor(Math.random() * (max - min + 1) + min);
-        console.log(random)
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("demo").innerHTML =
-            this.responseText;
-            }
-        };
-        xhttp.open("GET", "saveRandom/"+random, true);
-        xhttp.send();
-    }
+        function generateRandonNumber(min, max) {
+            var random = Math.floor(Math.random() * (max - min + 1) + min);
+            console.log(random)
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("demo").innerHTML =
+                        this.responseText;
+                }
+            };
+            xhttp.open("GET", "saveRandom/" + random, true);
+            xhttp.send();
+        }
     </script>
 </head>
+
 <body>
-    
+
     <button type="button" onclick="generateRandonNumber(1, 28)">generate number</button>
-    <p id="demo" ></p>
+    <p id="demo"></p>
 </body>
+
 </html>
