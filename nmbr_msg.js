@@ -1,4 +1,3 @@
-
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
@@ -38,5 +37,5 @@ module.exports = {
         err ? reject(err) : resolve(count);
       });
     }),
-    nmbrMsg:NmbrMsg
+  nmbrMsg: NmbrMsg
 };
